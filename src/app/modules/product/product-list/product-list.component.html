@@ -1,0 +1,29 @@
+<h2>Product List</h2>
+<form (keypress)="keyDownFunction($event)">
+  <input type="text" [(ngModel)]="search" name="search">
+  <button (click)="searchBy()">Search</button>
+</form>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>title</th>
+      <th>image</th>
+      <th>description</th>
+      <th>price</th>
+      <th>detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let myProduct of myProducts">
+      <td>{{ myProduct.id }}</td>
+      <td>{{ myProduct.title }}</td>
+      <td><img style="height: 100px;" src="{{myProduct.thumbnail}}"> </td>
+      <td>{{ myProduct.description }}</td>
+      <td>{{ myProduct.price }}</td>
+      <td><button type="button" [value]="myProduct.id" (click)='seeDetail(myProduct.id)'>See Detail</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

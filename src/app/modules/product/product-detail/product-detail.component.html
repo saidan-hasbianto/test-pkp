@@ -1,0 +1,44 @@
+<form [formGroup]="detailForm" novalidate>
+    <button type="button" (click)='home()'>Back</button>
+    <div *ngFor="let image of myImage">
+        <img class="thumbnail" src='{{image}}' />
+    </div>
+    <br>
+    <!-- <div>
+        <ul id="navlist">
+          <li ng-repeat="i in myImage">
+            <img class="thumbnail" ng-src="{{i.myImage}}"> 
+          </li>
+        </ul>
+      </div> -->
+      <p></p>
+    <div class="form-group"><br>
+        <input type="text" id="title" name="title" formControlName="title" class="form-control">
+    </div>
+    <div class="form-group"><br>
+        <textarea id="desc" name="desc" formControlName="description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="price">Price </label><br>
+        <input type="text" id="price" name="price" formControlName="price">
+    </div>
+    <div class="form-group">
+        <label for="discountPercentage">discountPercentage </label><br>
+        <input type="text" id="discountPercentage" name="discountPercentage" formControlName="discountPercentage">
+    </div>
+    <div class="form-group">
+        <label for="rating">rating </label><br>
+        <input type="text" id="rating" name="rating" formControlName="rating">
+    </div>
+    <div class="form-group">
+        <label for="stock">stock </label><br>
+        <input type="text" id="stock" name="stock" formControlName="stock">
+    </div>
+    <div class="form-group"> <label for="brand">brand </label><br>
+        <input type="text" id="brand" name="brand" formControlName="brand">
+    </div>
+    <div class="form-group">
+        <label for="category">category </label><br>
+        <input type="text" id="category" name="category" formControlName="category">
+    </div>
+</form>
